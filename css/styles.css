@@ -359,6 +359,88 @@ main > section > h2 {
 }
 
 /* ==========================================
+   CURSOS Y CERTIFICACIONES
+========================================== */
+
+#certifications {
+  grid-column: 1 / -1;
+}
+
+.cert-intro {
+  width: 100%;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* Varias columnas o una sola según el ancho, sin media queries */
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--gutter);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-navy);
+  border-radius: var(--radius);
+}
+
+.cert-card h3 {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: 1.1rem;
+}
+
+/* Etiqueta con los colores originales de los encabezados */
+.cert-status {
+  align-self: flex-start;
+  padding: 0.2rem 0.75rem;
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.cert-details {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.cert-details div {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.cert-details div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cert-details dt {
+  font-weight: 700;
+}
+
+.cert-details dd {
+  margin: 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ==========================================
    HABILIDADES Y GALERÍA
 ========================================== */
 
@@ -614,6 +696,11 @@ footer p {
 
   #projects h3 {
     margin-top: 0.75rem;
+  }
+
+  .cert-details div {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
 }
