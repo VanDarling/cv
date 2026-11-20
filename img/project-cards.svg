@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#265178"/>
+  <g stroke="#15181B" stroke-width="4">
+    <rect x="150" y="90" width="150" height="210" rx="14" fill="#ffffff" transform="rotate(-12 225 195)"/>
+    <rect x="300" y="90" width="150" height="210" rx="14" fill="#7DB8E3" transform="rotate(10 375 195)"/>
+  </g>
+  <text x="225" y="215" text-anchor="middle" font-family="monospace" font-size="54" font-weight="700" fill="#265178" transform="rotate(-12 225 195)">J</text>
+  <text x="375" y="215" text-anchor="middle" font-family="monospace" font-size="40" font-weight="700" fill="#15181B" transform="rotate(10 375 195)">{ }</text>
+</svg>

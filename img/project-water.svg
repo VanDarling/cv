@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#e8f2fb"/>
+  <rect x="60" y="250" width="480" height="40" rx="12" fill="#265178"/>
+  <rect x="420" y="160" width="40" height="110" rx="10" fill="#265178"/>
+  <path d="M300 70 C 300 70, 230 160, 230 205 A 70 70 0 0 0 370 205 C 370 160, 300 70, 300 70 Z" fill="#7DB8E3" stroke="#265178" stroke-width="5"/>
+  <text x="300" y="350" text-anchor="middle" font-family="monospace" font-size="30" font-weight="700" fill="#15181B">C++</text>
+</svg>
