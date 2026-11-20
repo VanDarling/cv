@@ -25,6 +25,8 @@
 7. No publicar en GitHub hasta verificar el proyecto y la autorización de la cuenta.
 8. Actualizar esta bitácora con los commits creados, modificando solo el tercer commit
    con `git commit --amend` y conservando los dos primeros.
+9. Comparar un prompt vago y un prompt preciso en dos sesiones nuevas e independientes,
+   partiendo del mismo commit, y registrar tres diferencias reales en «Qué cambió».
 
 ---
 
@@ -75,6 +77,55 @@ Funcionaban: el menú (5 enlaces), el botón **Siguiente** y el botón «Más so
 
 ---
 
+## Qué cambió
+
+**Cómo se hizo la prueba (19 de noviembre de 2026):**
+
+- Se extrajeron dos copias del commit `393e8c3` (el CV antes de agregar certificaciones),
+  sin historial de Git, en `~/Documents/GitHub/cv-amigo-pruebas/vago` y `.../preciso`,
+  fuera de este repositorio.
+- Cada prompt se ejecutó en una sesión nueva de Claude Code, abierta en su propia carpeta.
+  Primero terminó la prueba vaga y después se inició la precisa.
+- Ambas sesiones recibieron la misma nota de contexto: «Esta carpeta contiene un CV web
+  hecho con HTML, CSS y JavaScript (…). Trabaja solo dentro de esta carpeta.»
+- Se revisó el registro de cada sesión: cada una leyó y editó solo los archivos de su carpeta.
+  La app les dio una carpeta de notas compartida, que estaba vacía cuando cada una la consultó;
+  la sesión precisa solo vio que existía otra sesión llamada «prueba-vago», no sus resultados.
+- Los resultados se guardaron en `cv-amigo-pruebas/vago.diff` y `cv-amigo-pruebas/preciso.diff`.
+
+**Prompt vago:**
+
+> Agrega una sección de cursos a mi CV.
+
+**Prompt preciso:**
+
+> En index.html agrega `<section class="row" id="certifications">` con
+> `<h2>Cursos y certificaciones</h2>`, después de Educación. Agrega el enlace
+> `<a href="#certifications">Cursos y certificaciones</a>` al menú. No inventes cursos:
+> crea dos tarjetas con institución, fecha y constancia marcadas «Pendiente de completar».
+> Usa los colores y la fuente de css/styles.css, que se vea en una columna a 375 px,
+> y no modifiques otras secciones.
+
+**Tres diferencias entre los resultados:**
+
+1. **Datos inventados.** Con el prompt vago, la IA escribió tres cursos que Vannia no ha
+   tomado («Desarrollo web con HTML y CSS · 2025», «Programación orientada a objetos en
+   Java · 2024» e «Inglés intermedio · 2023») y añadió la nota «Cursos de ejemplo». Con el
+   prompt preciso no inventó nada: las dos tarjetas dicen «Pendiente de completar».
+2. **Identificador, título y menú.** El prompt vago produjo `id="courses"`, `<h2>Cursos</h2>`
+   y un enlace «Cursos», que no cumplen lo que pide la plataforma. El preciso produjo
+   `id="certifications"`, `<h2>Cursos y certificaciones</h2>` y el enlace
+   `<a href="#certifications">`, tal como se pidió.
+3. **Información de cada tarjeta.** En el resultado vago cada curso solo tiene nombre y una
+   línea «plataforma · año», sin constancia. En el preciso cada tarjeta tiene una lista con
+   Institución, Fecha y Constancia, y usa las columnas `col-1-2` del CV, que pasan a una sola
+   columna a 600 px o menos.
+
+Nota: la sección de este repositorio (commit 3) se hizo antes de esta prueba, con
+instrucciones detalladas; no es la copia del resultado del prompt preciso.
+
+---
+
 ## Verificaciones ejecutadas por Claude
 
 En el navegador integrado de la app de Claude, sirviendo la carpeta en `localhost`:
@@ -106,7 +157,8 @@ El número del correo coincide con el ID público de la cuenta VanDarling en Git
 |---|---|---|
 | 1 | `bbc1860` | Agregar CV original de la sesion 7 |
 | 2 | `393e8c3` | Mejorar diseno responsivo y accesibilidad |
-| 3 | (este commit) | Agregar seccion de cursos y certificaciones |
+| 3 | `3a67e29` | Agregar seccion de cursos y certificaciones |
+| 4 | (este commit) | Agregar comparacion de prompts en la bitacora |
 
 Verificaciones realizadas sobre el historial:
 
@@ -118,13 +170,16 @@ Verificaciones realizadas sobre el historial:
 - Los mensajes incluyen a Claude como coautor (`Co-Authored-By`), según la autorización del profesor.
 - El tercer commit se modificó con `git commit --amend` para actualizar esta bitácora;
   los dos primeros no cambiaron.
+- El cuarto commit solo modifica esta bitácora para agregar «Qué cambió».
 - Remoto `origin`: `https://github.com/VanDarling/cv.git`.
 
 ## Pendiente
 
 - [x] Confirmar la identidad Git de la dueña de la cuenta y crear los tres commits.
 - [x] Crear el repositorio `VanDarling/cv` (existe, es público y está vacío).
-- [ ] Subir los commits desde la cuenta VanDarling (`git push -u origin main`).
+- [x] Subir los tres primeros commits desde la cuenta VanDarling (`git push -u origin main`).
+- [x] Comparar el prompt vago y el preciso y documentar «Qué cambió».
+- [ ] Subir el cuarto commit a `VanDarling/cv`.
 - [ ] Validar en https://validator.w3.org/ (no se ejecutó).
 - [ ] Probar en Safari y en un teléfono real (solo se probaron anchos emulados).
 - [ ] Completar cursos, certificaciones y correo real cuando haya datos.
