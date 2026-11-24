@@ -7,3 +7,14 @@
 
 git add .
 git commit -m "Explica las cuatro fallas en audit.md"
+
+Lo que encontró opencode
+
+No se pudo realizar la revisión con OpenCode porque no tengo esta herramienta instalada en mi entorno de trabajo. Por lo tanto, no puedo atribuirle observaciones ni afirmar que realizó una auditoría.
+
+La revisión de los cuatro principios queda pendiente de realizarse con OpenCode:
+
+Jerarquía: pendiente de revisión.
+Tipografía: pendiente de revisión.
+Espacio: pendiente de revisión.
+Color: pendiente de medición de contraste.
