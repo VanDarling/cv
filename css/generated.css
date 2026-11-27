@@ -407,7 +407,7 @@ main > section > h2 {
   background: var(--color-navy);
   color: var(--color-white);
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -549,7 +549,7 @@ main > section > h2 {
 #projects h3 {
   margin: 0.75rem 0 0.4rem;
   color: var(--color-navy);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 #projects .col-1-3 p {
@@ -595,7 +595,7 @@ footer {
 }
 
 footer a {
-  color: var(--color-sky);
+  color: var(--color-white);
   font-weight: 700;
 }
 
