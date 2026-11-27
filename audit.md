@@ -27,3 +27,7 @@
 - **Qué falla:** El enlace del pie tenía contraste 3.89:1 (`#7DB8E3` sobre `#265178`).
 - **Por qué:** El texto normal requiere al menos 4.5:1 para cumplir WCAG AA.
 - **Cómo la corregí:** Cambié el enlace a blanco; la medición de contraste subió a 8.30:1.
+
+## Lo que encontró opencode
+
+No hay hallazgos verificables de opencode: la nota anterior indica que su revisión quedó pendiente, y `prompts.md` registra que se usó Claude Code en su lugar. Por tanto, no se puede determinar si opencode tenía razón; no hay observaciones suyas que contrastar. Las cuatro fallas anteriores corresponden a mi revisión, no a opencode.
